@@ -20,13 +20,13 @@ Help
     optional arguments:
       -h, --help            show this help message and exit
       -pk [SUPPLIED_KEYS [SUPPLIED_KEYS ...]], --private-key [SUPPLIED_KEYS [SUPPLIED_KEYS ...]]
-                        private key to use for generating contract addresses
+                            private key to use for generating contract addresses
       -n NONCE, --nonce NONCE
-                        nonce of the provided private key
+                            nonce of the provided private key
       -q C_TO_GEN, --quantity C_TO_GEN
-                        quantity of contracts to generate or quantity of keys
-                        if -k flag is used
+                            quantity of contracts to generate or quantity of keys
+                            if -k flag is used
       -V VANITY_STR, --vanity VANITY_STR
-                        vanity chars in the contracts addresses. WARNING: more
-                        than four chars will increase duration by A LOT
+                            vanity chars in the contracts addresses. WARNING: more
+                            than four chars will increase duration by A LOT
       -k, --keys            Only generate private keys. Use -q flag for quantity
