@@ -10,6 +10,8 @@ To install deps:
     pip install -r requirements.txt
 
 
+Help
+
     usage: contract_addr.py [-h] [-pk [SUPPLIED_KEYS [SUPPLIED_KEYS ...]]]
                         [-n NONCE] [-q C_TO_GEN] [-V VANITY_STR] [-k]
 
