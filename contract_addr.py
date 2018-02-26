@@ -97,7 +97,7 @@ if __name__=='__main__':
                         dest="C_TO_GEN",
                         type=int,
                         default=1,
-                        help="quantity of contracts to generate or quantiy of keys if -k flag is used"
+                        help="quantity of contracts to generate or quantity of keys if -k flag is used"
                         )
 
     parser.add_argument('-V',
@@ -115,7 +115,7 @@ if __name__=='__main__':
                         '--keys',
                         dest="ONLY_KEYS",
                         action='store_true',
-                        help="Only generate private keys. User -q flag for quantity"
+                        help="Only generate private keys. Use -q flag for quantity"
                         )
 
 
