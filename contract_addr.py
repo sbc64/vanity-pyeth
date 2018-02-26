@@ -89,7 +89,7 @@ if __name__=='__main__':
                         dest="NONCE",
                         type=int,
                         default=0,
-                        help="nonce of the privided private key"
+                        help="nonce of the provided private key"
                         )
 
     parser.add_argument('-q',
@@ -114,7 +114,8 @@ if __name__=='__main__':
     parser.add_argument('-k',
                         '--keys',
                         dest="ONLY_KEYS",
-                        action='store_true'
+                        action='store_true',
+                        help="Only generate private keys. User -q flag for quantity"
                         )
 
 
