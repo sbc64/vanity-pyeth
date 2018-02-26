@@ -3,6 +3,7 @@
 import os
 import ast
 import argparse
+import secrets
 from ethereum.utils import (
         mk_contract_address,
         sha3,
@@ -13,7 +14,8 @@ from ethereum.utils import (
     )
 
 def generate_pk():
-    pk = sha3(os.urandom(4096))
+
+    pk = sha3(str(secrets.randbits(4096*8)))
     return encode_hex(pk)
 
 # generates a single private and public dict
