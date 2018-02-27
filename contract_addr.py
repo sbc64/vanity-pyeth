@@ -3,7 +3,11 @@
 import os
 import ast
 import argparse
-import secrets
+try:
+    import secrets
+except:
+    pass
+
 from ethereum.utils import (
         mk_contract_address,
         sha3,
@@ -14,8 +18,12 @@ from ethereum.utils import (
     )
 
 def generate_pk():
+    
+    try:
+        pk = sha3(str(secrets.randbits(4096*8)))
+    except:
+        pk = sha3(os.urandom(4096))
 
-    pk = sha3(str(secrets.randbits(4096*8)))
     return encode_hex(pk)
 
 # generates a single private and public dict
@@ -27,9 +35,11 @@ def private_and_pub():
     
 def only_keys(quantity):
 
+    keys_dict = []
     for x in range(to_generate):
-        print (private_and_pub()) 
-        print ()
+        keys_dict.append(private_and_pub())
+
+    return keys_dict
 
 def check_hex_str(string):
 
@@ -132,7 +142,13 @@ if __name__=='__main__':
     nonce = args.NONCE
 
     if args.ONLY_KEYS:
-        only_keys(quantity=args.C_TO_GEN)
+        output = only_keys(quantity=args.C_TO_GEN)
+
+        for k in output:
+            print ("pk: {}".format(k['pk']))
+            print ("pa: {}".format(k['pa']))
+            print ()
+
         exit(0)
     
     if args.VANITY_STR:
